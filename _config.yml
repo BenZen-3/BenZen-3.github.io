@@ -18,10 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Zen Site
+title: Ben Dodson
 email: you-dont-get-my-email@email.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Description in _config.yml
+  Ben Dodson
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://benzen-3.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: twitter_username

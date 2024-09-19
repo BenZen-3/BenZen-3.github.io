@@ -1,61 +1,37 @@
 ---
-layout: base
+layout: main
+title: Welcome to My Midnight-Themed Site
 ---
 
+<!-- Home Page Content -->
+
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
 
-  {{ content }}
+    <section id="home">
+    <div class="intro">
+        <h1>Ben Dodson</h1>
+        <p>This is a small site to host my projects and portfilio. I am ... This site is in development, so excuse any messes. </p>
+    </div>
 
+    <div class="content">
+        <!-- <h2>Fun New Stuff</h2>
+        <p>I'm a web developer passionate about creating elegant, user-friendly websites. This site uses the Jekyll Midnight theme to showcase my portfolio and thoughts on web development.</p> -->
 
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
-
-
-  {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
+        <h2>What's happening?</h2>
+        <ul>
+        {% for post in site.posts limit:5 %}
+            <li>
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            <small>Posted on {{ post.date | date: "%B %d, %Y" }}</small>
+            </li>
+        {% endfor %}
         </ul>
-      </div>
-    {%- endif %}
+    </div>
 
-  {%- endif -%}
+    <div class="footer">
+        <p>© {{ site.time | date: '%Y' }} Ben Dodson</p>
+    </div>
+    </section>
 
 </div>

@@ -4,45 +4,24 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
 
-    <!-- Site title -->
-    <!-- <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a> -->
-
     <!-- Icon navigation -->
     <div class="icon-nav">
-      <a href="" class="icon-link" title="Home">
-        Ben Dodson <!-- Unicode symbol for home -->
+      <a href="/" class="icon-link" title="Home">
+        Ben Dodson
       </a>
-      <a href="#" class="icon-link" title="Info">
-        About <!-- Unicode symbol for info -->
+      <a href="/about" class="icon-link" title="Info">
+        About
       </a>
-      <a href="#" class="icon-link" title="Contact">
-        Projects <!-- Unicode symbol for envelope -->
+      <a href="/projects" class="icon-link" title="Contact">
+        Projects
       </a>
-      <a href="#" class="icon-link" title="User">
-        Contact <!-- Unicode symbol for user -->
+      <a href="/contact" class="icon-link" title="User">
+        Contact
       </a>
     </div>
 
-
-      {%- if titles_size > 0 -%}
-
-        <!-- <div class="trigger">
-            {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {%- endif -%}
-          {%- endfor -%}
-        </div> -->
-      </nav>
-    {%- endif -%}
   </div>
 </header>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMpkuRlgV9lgvp9V5NYupKGrE9jyGT4D2BdGiw" crossorigin="anonymous">
-
-
-
 
 <style>
   /* Sticky Header */
@@ -52,7 +31,7 @@
     width: 100%;
     background-color: rgb(45, 45, 45); /* Adjust to match your theme */
     z-index: 1000; /* Ensures header stays on top */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add shadow for visibility */
+    box-shadow: 0 2px 5px rgba(199, 199, 199, 0.1); /* Optional: add shadow for visibility */
   }
 
   .wrapper {
@@ -64,15 +43,12 @@
 
   .icon-nav {
     display: flex;
-    gap: 15px;
+    gap: 30px;
   }
 
-  .icon-link img {
-    width: 24px;
-    height: 24px;
+  .icon-link {
+    text-decoration: none;
+    font-size: 20px;
   }
 
-  .icon-link:hover img {
-    opacity: 0.8; /* You can adjust this for a hover effect */
-  }
 </style>

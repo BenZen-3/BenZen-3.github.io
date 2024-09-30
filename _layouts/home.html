@@ -1,5 +1,5 @@
 ---
-layout: main
+layout: base
 title: Welcome to My Midnight-Themed Site
 ---
 
@@ -17,13 +17,13 @@ title: Welcome to My Midnight-Themed Site
         <!-- <h2>Fun New Stuff</h2>
         <p>I'm a web developer passionate about creating elegant, user-friendly websites. This site uses the Jekyll Midnight theme to showcase my portfolio and thoughts on web development.</p> -->
 
-        <h2>What's happening?</h2>
+        <h2>Projects</h2>
         <ul>
         {% for post in site.posts limit:5 %}
             <li>
             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
             <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-            <small>Posted on {{ post.date | date: "%B %d, %Y" }}</small>
+            <small>{{ post.date | date: "%B %Y" }}</small>
             </li>
         {% endfor %}
         </ul>

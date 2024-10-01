@@ -1,32 +1,79 @@
 ---
-layout: page
+layout: post
 title:  "DIY CNC Mill"
 date:   2024-09-16 02:51:09 -0400
-categories: jekyll update
+categories: project
 ---
+DIY CNC Mill
 
-cnc project
+Overview
+Over the span of about 3 months in the summer of 2022, I decided to make my own desktop CNC mill. The goal was to make a mill capable of milling any plastic, aluminum, or wood thrown at it, along with the capacity to tackle ferrous metals or harder non-ferrous metals if needed. It also needed to cheap and be portable enough to and from college.
 
-<!-- You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+[VIDEO OF IT MILLING SHIT REALLY FAST]
 
-Jekyll requires blog post files to be named according to the following format:
+Design - Spindle
+This machine was designed from the spindle backwards. I started with the necessary cutting parameters that I wanted and then moved backwards from there. In my opinion, the most critical features of the spindle for a hobby machine are the power consumption, the torque/speed and the tooling size.
+One of the big constraints with choosing a spindle is the total power draw of the spindle. A standard US outlet has a 15A breaker. It is generally suggested to use under 80% of the limit continuously, which leaves my freedom-loving spindle only able to draw ~12A at 120V from a standard outlet. This puts my ideal spindle range at around 1-1.5Kw.
+Moving on to the torque/speed of a hobby spindle, the most obvious tradeoff is that a hobby spindle has very low torque compared to a professional machine. This is especially true at low speeds, where the torque/speed curve takes a dramatic nose-dive into near uselessness. Unfortunately, when I was looking for spindles, there was not a significant amount of variation in the torque/speed curve of hobby spindles under 1.5kW. All options would limit me to higher speed machining past 10k rpm. Luckily, this would be fine for aluminum and non-ferrous work. Steel is certainly an issue for this spindle because it generates needles more than it produces chips. 
+For tooling purposes, the limited torque of the hobby spindles severely limited the tooling size. Bigger tools are better because the endmills are more rigid and additional tool types are available (indexable endmills). However, the limitations of the spindle torque heavily suggested using smaller tooling in the 6mm range. 
+The spindle that I decided to use the ____. It goes up to 20k rpm spindle with water cooling and ER-11 tooling. It hit all the specifications that I needed, and it did it on a budget:
 
-`YEAR-MONTH-DAY-title.MARKUP`
+[Picture of Spindle]
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+In the future, this part will probably be replaced since it is one of the areas with the most room for improvement. However, that upgrade to a low-end professional spindle would be extremely expensive.
 
-Jekyll also offers powerful support for code snippets:
+Design – Motion Components
+The motion components of the CNC are twofold: linear rails and ballscrews. Linear rails rigidly constrain the motion of an axis to a single direction. Ballscrews are like lead screws except they circulate ball bearings to reduce sliding friction (yay rolling friction), reduce backlash, and decrease wear. 
+[picture of linear rail] [picture of ballscrew]
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+Starting with the linear rail choice, the ideal linear rail is extremely rigid and extremely straight. There are several different types of linear slides/rails available. The two that I’ve seen most commonly in CNCs (both DIY and professional) are the following:
+1) True linear rails aka profile rails aka linear guideway
+2) Round rails
+True linear rails function by circulating balls along a ground raceway similar to a radial ball bearing, except the balls recirculate along a linear path instead of circularly around the bearing races. Linear rails allow the rail to be bolted down at multiple points along the direction of motion.
+Round rails function similarly to linear rails, except the carriages run along a round shaft. These rails are either only secured at the ends, or have a flange that allows for a semi-rigid connection along the length of the rail. 
+True linear rails are far superior in rigidity to round rails. Although round rails can be found in some machines due to their low cost, true linear rails are much better. Any company pawning off round noodle rails are stealing money (See the Bantam CNC for reference).
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/ -->
+Now looking only at the true linear rails, there are still many different sizes of linear rail, from tiny mgn12 rails on 3D printers to massive rails that look more like train tracks than linear rails. Without diving into too much detail on the tradeoff between the cost, rigidity, and size of the rails, HGW15 rails are a decent balance across these metrics. The highest quality options for linear rails, such as HIWIN rails, are prohibitively expensive. Alternative sources of knockoff rails are Alibaba, Aliexpress, or Amazon. Obviously, these rails exhibit less-than-stellar quality but are more than sufficient for my limited applications and experience. Shoutout to the PrintNC community for finding semi-reputable suppliers for motion components. I ordered from the same suppliers that they recommended.
+
+The ballscrews are SFU1605. Ballscrews for linear motion are one of the best ways to build a rigid and accurate CNC machine. They are superior to lead screws and belts and rack/pinion designs in wear, backlash, and friction. The only major disadvantage of ball screws is the higher cost. The higher cost was mitigated by using knockoff rolled ballscrews. Ballscrews can be made with one of two main manufacturing techniques. They are either precision ground, and exceedingly expensive (thousands of dollars per screw), or they can be rolled. Rolled screws are less accurate than ground screws but are more durable and far cheaper owing to the easier manufacturing. I used rolled screws from a supplier on Alibaba, which was suggested by the PrintNC community.
+The name SFU1605 ballscrew means that they are 16mm in diameter and have a 5mm pitch. I chose a high diameter ballscrew to increase the rigidity of the screw and reduce the possibility of runout at very high screw rpm (aka screw whipping). In retrospect, a 12mm diameter screw would have most likely sufficed, but the only engineering downside to the 16mm diameter is a small increase in the inertia of the system. The 5mm pitch was chosen because it was the smallest pitch readily available, which gives a high precision. 
+
+These two types of motion components work together to make a rigid and accurate machine.
+
+Design – Frame
+Two things. Rigidity and damping. 
+
+
+Design – Controls 
+
+
+Precision
+The theoretical precision of the machine is the pitch of ballscrew times the precision of motor.
+
+Construction
+Making the damn thing
+Drill press
+Bandsaw
+Jigsaw
+Car?
+
+Tramming
+
+
+
+Results/Lessons
+
+
+I did not and do not have the metrology equipment to quantify the straightness or flatness of the cheap linear rails, but I can roughly determine the straightness of each axis with respect to the frame using a dial indicator and running the axes back and forth.
+The Y-axis is within 5 thou across its full travel assuming that the milled plate I ordered was straight along that axis. The X-axis is within 8 thou across its travel. The Z-axis is within 6 thou. The mill was trammed with the straightest portions of travel at the center of the table and the most mis-aligned sections at the edges of the travel.
+
+The biggest issue for me is determining the squareness of the machine. Squareness is
+
+
+
+NOTHING IS STRAIGHT, NOTHING IS FLAT, NOTHING IS SQUARE
+
+
+
+[Video of it milling!]

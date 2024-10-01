@@ -6,7 +6,10 @@ categories: project
 ---
 DIY CNC Mill
 
+<img src="\assets\images\IMG_7176.jpg" alt="CNC picture" style="width:500px;height:600px;">
+
 Overview
+
 Over the span of about 3 months in the summer of 2022, I decided to make my own desktop CNC mill. The goal was to make a mill capable of milling any plastic, aluminum, or wood thrown at it, along with the capacity to tackle ferrous metals or harder non-ferrous metals if needed. It also needed to cheap and be portable enough to and from college.
 
 [VIDEO OF IT MILLING SHIT REALLY FAST]

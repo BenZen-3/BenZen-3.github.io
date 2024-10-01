@@ -3,5 +3,8 @@ layout: post
 title:  "Rover Arm"
 date:   2024-09-30 02:51:09 -0400
 categories: project
+icon: \assets\images\Rover_Arm_icon.png
 ---
 Rover Arm 
+
+<img src="\assets\images\Rover_Arm.jpg" style="width:758px;height:568px;">

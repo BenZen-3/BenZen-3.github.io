@@ -3,10 +3,11 @@ layout: post
 title:  "DIY CNC Mill"
 date:   2024-09-16 02:51:09 -0400
 categories: project
+icon: \assets\images\CNC_square_icon.jpg
 ---
 DIY CNC Mill
 
-<img src="\assets\images\IMG_7176.jpg" alt="CNC picture" style="width:500px;height:600px;">
+<img src="\assets\images\CNC.jpg" alt="CNC picture" style="width:500px;height:600px;">
 
 Overview
 

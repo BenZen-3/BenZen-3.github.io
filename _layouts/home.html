@@ -22,6 +22,7 @@ title: Welcome to My Midnight-Themed Site
         {% for post in site.posts limit:4 %}
             <li>
             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <img src="{{ post.icon }}" style="width:400px;height:400px;"> 
             <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
             <small>{{ post.date | date: "%B %Y" }}</small>
             </li>

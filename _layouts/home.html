@@ -8,18 +8,20 @@ title: Welcome to My Midnight-Themed Site
 <div class="home">
 
     <section id="home">
+
+    <div class="banner-image"></div>
+
     <div class="intro">
         <h1>Ben Dodson</h1>
 
-        <img src="\assets\images\Mii.png" style="width:300px;height:300px;">
-
-
-        <p>This is a small site to host my projects and portfilio. I am still working on it, so excuse any messes. asdlfhasdkjkjhsdfajkhsfdajkhsfdjkahkjsdafkjsfadkjhsafkjhkjfdsakjdsfkjsfdkjksafhjdkjhfsadkjhsfdakhjfskajdhjhh sdshaf hkfsdhk lsdfa hkl kdsfkhjfsahjkjfsdh kjsfhkd ljklhj sa fdkhjfskdhj lhlkjafsdkhjlasfdkhjlkhjafdskhj fds khjsfd khjafshjkkasfhjd </p>
+        <ul>
+          <img src="\assets\images\Mii.png" style="width:300px;height:300px;">
+          <p>This is a small site to host my projects and portfilio. I am still working on it, so excuse any messes. asdlfhasdkjkjhsdfajkhsfdajkhsfdjkahkjsdafkjsfadkjhsafkjhkjfdsakjdsfkjsfdkjksafhjdkjhfsadkjhsfdakhjfskajdhjhh sdshaf hkfsdhk lsdfa hkl kdsfkhjfsahjkjfsdh kjsfhkd ljklhj sa fdkhjfskdhj lhlkjafsdkhjlasfdkhjlkhjafdskhj fds khjsfd khjafshjkkasfhjd </p>
+      </ul>
+      
     </div>
 
     <div class="content">
-        <!-- <h2>Fun New Stuff</h2>
-        <p>I'm a web developer passionate about creating elegant, user-friendly websites. This site uses the Jekyll Midnight theme to showcase my portfolio and thoughts on web development.</p> -->
 
         <h2>Selected Projects</h2>
         <ul>
@@ -42,3 +44,66 @@ title: Welcome to My Midnight-Themed Site
     </section>
 
 </div>
+
+
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+  }
+
+  .banner-image {
+    background-image: url('/assets/images/CMR_Background_Cropped.png');
+    background-size: 100% auto; /* Ensures the entire image is visible, resizes but might leave space */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-position: top center; /* Position the image to start from top left */
+    background-attachment: fixed; /* Keeps the background from scrolling */
+
+    position: absolute; /* Positions the div from the top-left corner of the viewport */
+    margin-left: -5%;
+    margin-right: -5%;
+    top: 0;
+
+    width: 100vw; 
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .intro {
+    position: relative;
+    margin-top: 100vh; /* Pushes the content below the background image */
+    margin-bottom: 20vh;
+  }
+
+</style>
+
+
+<!-- body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+  .half-screen-background {
+    background-image: url('/assets/images/Background.png'); /* Path to your image */
+    background-size: 100% auto; /* Ensures the entire image is visible, resizes but might leave space */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-position: top center; /* Position the image to start from top left */
+    background-attachment: fixed; /* Keeps the background from scrolling */
+    position: absolute; /* Positions the div from the top-left corner of the viewport */
+    top: 0;
+    left: -5vw;
+    height: 50vh; /* Covers 50% of the viewport height */
+    width: 100vw; /* Full width of the viewport */
+    overflow: hidden; /* Prevents overflow issues */
+  }
+
+  .intro {
+    position: relative;
+    margin-top: 50vh; /* Pushes the content below the background image */
+    height: 100vh; /* Full viewport height for content */
+    width: 100vw; /* Full viewport width for content */
+  } -->

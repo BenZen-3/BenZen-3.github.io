@@ -12,13 +12,14 @@ title: Welcome to My Midnight-Themed Site
     <div class="banner-image"></div>
 
     <div class="intro">
-      <h1>Ben Dodson</h1>
+      <h1>About Me</h1>
+      <div class="divider"></div>
 
       &nbsp;
 
       <ul>
         <li style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-          <img src="\assets\images\ArmBenDodson.jpg" style="width:400px;height:400px;">
+          <img src="\assets\images\ArmBenDodson_Medium.jpg" style="width:400px;height:400px;">
           <ul>
             Hi I'm Ben. This is my portfolio. I'm just a dude who likes robots. Look at them :D
           </ul>
@@ -30,16 +31,24 @@ title: Welcome to My Midnight-Themed Site
     <div class="content">
 
         <h1>Selected Projects</h1>
+        <div class="divider"></div>
 
         &nbsp;
-        
+
         <ul>
-            {% for post in site.posts limit:100 %}
+            {% for post in site.posts limit:4 %}
             <li style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-              <img src="{{ post.icon }}" style="width: 400px; height: 400px; margin-right: 20px;">
+
+              <a class=link-pic href="{{ post.url }}" style="flex-shrink: 0;">
+                <img src="{{ post.icon }}" style="width: 400px; height: 400px; margin-right: 20px;">
+              </a>
+
               <div>
                 <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                
+                &nbsp;
                 <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+
                 <small>{{ post.date | date: "%B %Y" }}</small>
               </div>
             </li>
@@ -89,8 +98,28 @@ body {
   }
 
   h1 {
-    font-size: 3em; /* You can adjust the size to your preference */
+    font-size: 2.5em; /* You can adjust the size to your preference */
+  }
+  
+
+  h3 {
+    font-size: 2em;
     text-decoration: underline;
+  }
+
+  .divider {
+    height: 1px;           /* Set the thickness */
+    background-color: #e8e8e8; /* Set the color */
+    width: 100%;           /* Stretch across the page */
+    margin: 20px 0;        /* Optional: Add space above and below */
+  }
+
+  .link-pic img {
+    transition: opacity 0.3s ease;  /* Smooth transition */
+  }
+
+  .link-pic:hover img {
+    opacity: 0.5;  /* Dim the image on hover */
   }
 
 </style>

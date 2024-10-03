@@ -12,18 +12,27 @@ title: Welcome to My Midnight-Themed Site
     <div class="banner-image"></div>
 
     <div class="intro">
-        <h1>Ben Dodson</h1>
+      <h1>Ben Dodson</h1>
 
-        <ul>
-          <img src="\assets\images\Mii.png" style="width:300px;height:300px;">
-          <p>This is a small site to host my projects and portfilio. I am still working on it, so excuse any messes. asdlfhasdkjkjhsdfajkhsfdajkhsfdjkahkjsdafkjsfadkjhsafkjhkjfdsakjdsfkjsfdkjksafhjdkjhfsadkjhsfdakhjfskajdhjhh sdshaf hkfsdhk lsdfa hkl kdsfkhjfsahjkjfsdh kjsfhkd ljklhj sa fdkhjfskdhj lhlkjafsdkhjlasfdkhjlkhjafdskhj fds khjsfd khjafshjkkasfhjd </p>
+      &nbsp;
+
+      <ul>
+        <li style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+          <img src="\assets\images\ArmBenDodson.jpg" style="width:400px;height:400px;">
+          <ul>
+            Hi I'm Ben. This is my portfolio. I'm just a dude who likes robots. Look at them :D
+          </ul>
+        </li>
       </ul>
       
     </div>
 
     <div class="content">
 
-        <h2>Selected Projects</h2>
+        <h1>Selected Projects</h1>
+
+        &nbsp;
+        
         <ul>
             {% for post in site.posts limit:100 %}
             <li style="display: flex; align-items: flex-start; margin-bottom: 20px;">
@@ -79,31 +88,10 @@ body {
     margin-bottom: 20vh;
   }
 
+  h1 {
+    font-size: 3em; /* You can adjust the size to your preference */
+    text-decoration: underline;
+  }
+
 </style>
 
-
-<!-- body, html {
-    margin: 0;
-    padding: 0;
-  }
-
-  .half-screen-background {
-    background-image: url('/assets/images/Background.png'); /* Path to your image */
-    background-size: 100% auto; /* Ensures the entire image is visible, resizes but might leave space */
-    background-repeat: no-repeat; /* Prevents image repetition */
-    background-position: top center; /* Position the image to start from top left */
-    background-attachment: fixed; /* Keeps the background from scrolling */
-    position: absolute; /* Positions the div from the top-left corner of the viewport */
-    top: 0;
-    left: -5vw;
-    height: 50vh; /* Covers 50% of the viewport height */
-    width: 100vw; /* Full width of the viewport */
-    overflow: hidden; /* Prevents overflow issues */
-  }
-
-  .intro {
-    position: relative;
-    margin-top: 50vh; /* Pushes the content below the background image */
-    height: 100vh; /* Full viewport height for content */
-    width: 100vw; /* Full viewport width for content */
-  } -->

@@ -29,6 +29,12 @@
     position: sticky;
     top: 0;
     width: 100%;
+
+    background: linear-gradient(0deg, hsla(0, 0%, 18%, 1) 50%, hsla(4, 89%, 28%, 1) 100%);
+    background: -moz-linear-gradient(0deg, hsla(0, 0%, 18%, 1) 50%, hsla(4, 89%, 28%, 1) 100%);
+    background: -webkit-linear-gradient(0deg, hsla(0, 0%, 18%, 1) 50%, hsla(4, 89%, 28%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2D2D2D", endColorstr="#891108", GradientType=1 );
+
     background-color: rgb(45, 45, 45); /* Adjust to match your theme */
     z-index: 1000; /* Ensures header stays on top */
     box-shadow: 0 2px 5px rgba(199, 199, 199, 0.1); /* Optional: add shadow for visibility */
@@ -47,14 +53,8 @@
   }
 
   .icon-link {
-    text-decoration: none;
     font-size: 35px;
-    color:rgb(211, 25, 11);
     font-weight: bold;
-  }
-  
-  .icon-link:hover {
-    color: rgba(211, 24, 11, 0.5); /* Highlight color on hover */
   }
 
   .site-header {

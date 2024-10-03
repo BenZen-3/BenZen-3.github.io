@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "Rover Arm"
+date:   2024-06-01 02:51:09 -0400
+categories: project
+icon: \assets\images\Rover_Arm_icon.png
+---
+
+The rover arm was made for the Cornell Mars Rover (CMR) Team between August 2023 and June 2024. During that time, I served as the Arm Subteam lead and directed the construction of the arm and the memebers of the Arm subteam. This project is a collaboration with the members of the Arm Subteam, and the other members of CMR. 
+
+<img src="\assets\images\Rover_Arm.jpg" style="width:758px;height:568px;">
+
+My design contributions were to the lower arm, one of the end effectors, and the miniature arm control/teleoperation. I did not directly work on the wrist design or the original end effector.
+
+
+To get a better understanding of the 
+
+
+[Image of arm CAD]
+
+
+Discuss the strain wave gearboxes and motor control
+
+
+Discuss structure and analysis
+
+
+Discuss End Effector
+
+
+
+Discuss mini arm and control
+
+Control of the arm can be thought of in three separate sections:
+- control of the arm from a low-level accuracy perspective (how do I get the arm to do what I told it to do)
+- control of the arm from a user/driver perspective (how do I input what I want it to do)
+    - mini arm
+    - IK
+
+The following control scheme was devised, and tested in simulation.
+
+[Picture of the control scheme]
+
+Note: I know now that there are better ways to do this!
+
+This controller shows a robotic arm control scheme that basically linearizes the arm into joint space. It linearizes the graivity term by adding feedforward torques equivalent to the weight forces on the arm. It also attempts to linearize the inertial forces as well. This control scheme theoretically allows for the arm to be controlled very precisely by the PID control block. 
+
+This block diagram is probably not the greatest way to illustrate this, but I think I accidently re-invented this method, and choose to just keep the original block diagram I made. One notable oddity here is the method of handling the inertial time-invariance. Instead of using what I have since learned is called computed torque control and calculating the inertial and gravity-induced torques to linearize the system, this control scheme suggests the use of an arcane 'Loop Gain Estimator' which I can only assume I meant as a hand-wave in the direction of gain scheduling. (I have learned more since I made this diagram)
+
+Although a form of this control was separately validated for two degrees of freedom, the arm for this year actually just used joint-space control without gravity compensation or inertial compensation. This was a valid approach due to the relatively high torque output of the arm versus its needs and the low speeds that the arm would move at. The high torque compensated for most of the gravity loads applied to the arm, and the low speeds meant that inertial compensation was almost entirely irrelevant. 
+
+In fact, even when the gains were push to be unstable, the very high gear ratio of the strain wave gearing prevented the arm from becoming unstable. So although there was instability on the inputs, the high (100:1 or 50:1) reductions meant that the arm overall was relatively stable. Although I would struggle to call joint space PD very mature, or complicated, it was simple, robust, and functional.
+
+Additionally, we simply ran out of time to implement the theorized controller. The benefits that the control gave were marginal compared to the other issues facing the rover at the time. Hopefully future members can use something similar to achieve better control and accuracy than this arm was able to!
+
+If I learned something from this, it would be to use the simplest form of control scheme possible at first, and then increase complexity to add functionality. Also, computed torque control exists and does not require re-inventing!
+
+
+Inverse Kinematics 
+
+The higher-level control of the rover arm was done via <s>magic</s> inverse kinematics. Honestly it was basically magic though because some ROS package did everything once we set it up. Yes we did get the gist of how IK works, no we did not want to find all those homogeneous transforms ourselves.
+
+The arm was controllable with IK through a Playstation controller and was useful in fine motion tasks like typing on a keyboard or moving directly up and down for certain motions. 
+
+
+Mini arm
+
+Mini arm was definitely one of my favorite parts of the arm. It was basically just a scale model of the arm that you could move to move the corresponding joints on the real arm. Although this is definitely not a new concept by any means, it was new to CMR and was definitely new to me. Implementation was pretty easy, and it made using the arm a lot of fun and way easier. Shoutout to David B for making the mini arm for me when I got completely swamped with everything else. Also for testing everything with me and for being a cool dude. The original idea for implementation also included torque feedback, but the latency between the real arm and mini-arm via radio was too great to accomplish this without risking instability. I believe it's posisble to do this with a slow enough arm and low enough latency, but wasn't doable this year.
+
+[video of it moving the rover arm]
+
+
+
+Results/Lessons
+
+Honestly, the biggest lessons from leading the Arm Subteam were in the leadship and how to work with others on a large project spanning multiple discplines. But those are boring and don't fit well on a personal-portfolio-website. So technically speaking, I think this project taught me a lot about gearboxes, motor control, structures, and control. Oh, and it solidified my hatred for wiring. That too. 
+
+10/10 would build again.

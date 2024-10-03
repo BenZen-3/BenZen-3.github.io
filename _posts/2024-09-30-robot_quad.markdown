@@ -8,3 +8,7 @@ icon: \assets\images\Sparky_icon.png
 Robotic Quadruped
 
 <img src="\assets\images\Sparky.png" style="width:500px;height:600px;">
+
+
+
+8/10 Would build again. Would have made fewer CNC parts.

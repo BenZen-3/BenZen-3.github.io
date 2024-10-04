@@ -4,6 +4,7 @@ title:  "Humanoid Robotic Arm"
 date:   2024-08-01 02:51:09 -0400
 categories: project
 icon: \assets\images\Humanoid_Arm_icon.png
+summary: Ongoing project to build an anthropromorphic humanoid robotic arm. This arm has been designed for upcoming work on embodied machine learning and imitation learning. Design makes significant use of brushless motors with capstan drives to acheive a high torque density with good controlability and low cost.
 ---
 
 <video autoplay muted loop width="1000" height="600">
@@ -15,7 +16,7 @@ icon: \assets\images\Humanoid_Arm_icon.png
 
 <h1> Overview </h1>
 
-This project is still in progress, so I will update this as it progresses. It was started in June 2024 and the current progress is about 6 weeks of work which slowed down when the semester started and my availibility became more limited.
+This project is still in progress, so I will update this as it progresses. It was started in June 2024 and the current progress is about 6 weeks of work which slowed down when the semester started and my availibility became more limited. The design takes inspiration from many places, but the design is completely my own.
 
 The overarching goal for this arm is to create a humanoid arm for embodied machine learning and imitation learning. This yeields the mechanical goal to create an arm that mimics humanoid size and capabilities while maintaining controlability. These requirements are difficult to manage while maintaining low cost, so the design requires a lot careful attention Just to list a few requirements: anthropromorphic morphology, high speed, high torque, backdrivability/torque transparency, precise position and velocity control, and decent torque control.
 

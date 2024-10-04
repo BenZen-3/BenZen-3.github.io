@@ -4,6 +4,7 @@ title:  "DIY CNC Mill"
 date:   2022-08-01 02:51:09 -0400
 categories: project
 icon: \assets\images\CNC_square_icon.jpg
+summary: Previous work on a custom designed and built 3-axis CNC machine. The machine is designed to mill most soft non-ferrous and some ferrous metals or other hard materials. The CNC makes use of a custom steel frame with ballscrews, linear profile rails, and a 20k RPM COTS spindle. The mill has mostly been used for milling aluminum with some bronze and occassional steel.
 ---
 DIY CNC Mill
 
@@ -11,7 +12,7 @@ DIY CNC Mill
 
 Overview
 
-Over the span of about 3 months in the summer of 2022, I decided to make my own desktop CNC mill. The goal was to make a mill capable of milling any plastic, aluminum, or wood thrown at it, along with the capacity to tackle ferrous metals or harder non-ferrous metals if needed. It also needed to cheap and be portable enough to and from college.
+Over the span of about 3 months in the summer of 2022, I decided to make my own desktop CNC mill. The goal was to make a mill capable of milling any plastic, aluminum, or wood thrown at it, along with the capacity to tackle ferrous metals or harder non-ferrous metals if needed. It also needed to cheap and be portable enough to and from college. The mill takes inspiration from multiple sources, but the design is entirely my own.
 
 [VIDEO OF IT MILLING SHIT REALLY FAST]
 

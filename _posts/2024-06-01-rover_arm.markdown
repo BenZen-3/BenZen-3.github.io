@@ -4,6 +4,7 @@ title:  "Rover Arm"
 date:   2024-06-01 02:51:09 -0400
 categories: project
 icon: \assets\images\Rover_Arm_icon.png
+summary: The Rover Arm was made for the Cornell Mars Rover team to compete in the University Rover Competition's equipment servicing and extreme delivery missions. The arm was designed to complete high load tasks as well as precision tasks. It makes use of brushless motors, strain wave gearboxes and an assortment of structural elements. 
 ---
 
 The rover arm was made for the Cornell Mars Rover (CMR) Team between August 2023 and June 2024. During that time, I served as the Arm Subteam lead and directed the construction of the arm and the memebers of the Arm subteam. This project is a collaboration with the members of the Arm Subteam, and the other members of CMR. 

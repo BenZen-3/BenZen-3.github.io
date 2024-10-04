@@ -4,6 +4,7 @@ title:  "Robotic Quadruped"
 date:   2023-12-01 02:51:09 -0400
 categories: project
 icon: \assets\images\Sparky_icon.png
+summary: This summer project's goal was to design and build a robotic quadruped named Sparky. The dimensions are approximately that of the MIT mini cheetah, and much of the overarching design takes inspiration from that work. This design uses custom designed, machined, and assembled internal cycloidal actuators.
 ---
 Robotic Quadruped
 

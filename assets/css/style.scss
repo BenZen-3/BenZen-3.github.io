@@ -242,7 +242,31 @@ strong { font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-s
 
 .wrapper { max-width: 90%; margin: 0 auto; position: relative; padding: 0 20px; }
 
+
+.custom-link {
+  color: rgb(0,125,255);
+  text-decoration: none;
+  cursor: pointer; /* Makes the text behave like a link */
+}
+
+.custom-link:hover {
+    color: rgb(0,125,255);
+    opacity: .5;
+}
+
+
+
+.image-container {
+  display: flex;
+  justify-content: space-between; /* Adjusts space between images */
+  align-items: center; /* Aligns images vertically (if they have different heights) */
+}
+
 /* CHANGES HERE */
+
+
+
+
 
 section img { max-width: 100%; }
 

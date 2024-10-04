@@ -9,7 +9,11 @@ title: Welcome to My Midnight-Themed Site
 
     <section id="home">
 
-    <div class="banner-image"></div>
+      <!-- <div class="welcome-text">
+        <h1>Hi. I'm Ben Dodson.</h1>
+      </div> -->
+      
+      <div class="banner-image"></div>
 
     <div class="intro">
       <h1>About Me</h1>
@@ -21,11 +25,11 @@ title: Welcome to My Midnight-Themed Site
         <li style="display: flex; align-items: flex-start; margin-bottom: 20px;">
           <img src="\assets\images\ArmBenDodson_Medium.jpg" style="width:400px;height:400px;">
           <ul>
-            &emsp;Hi I'm Ben. I'm a Masters of Engineering student in Mechanical Engineering at Cornell University. I also did my undergrad at Cornell in Mechanical Engineering and minored in Computer Science.
+            Hi I'm Ben. I'm a Masters of Engineering student in Mechanical Engineering at Cornell University. I also did my undergrad at Cornell in Mechanical Engineering and minored in Computer Science.
 
-            I have the pleasure of working in the EmPRISE Lab with Professor Tapomayukh Bhattacharjee where I work on robot assistive feeding.
+            I currently have the pleasure of working in the <a class="custom-link" href="https://emprise.cs.cornell.edu/">EmPRISE Lab</a> with Professor Tapomayukh Bhattacharjee where I work on robot assistive feeding.
 
-            I was previously the arm lead of the Cornell Mars Rover team and competed in the University Rover Challenge. 
+            I was previously the arm lead of the <a class="custom-link" href="https://marsrover.engineering.cornell.edu/">Cornell Mars Rover team</a> and competed in the University Rover Challenge. 
 
             I'm passionate about robots. My focus is on the fusion between hardware and software for the development of the next generation of robotics for learning and manipulation.
 
@@ -82,7 +86,7 @@ body {
   }
 
   .banner-image {
-    background-image: url('/assets/images/CMR_Background_Cropped.png');
+    background-image: url('/assets/images/Background_bzd.png');
     background-size: 100% auto; /* Ensures the entire image is visible, resizes but might leave space */
     background-repeat: no-repeat; /* Prevents image repetition */
     background-position: top center; /* Position the image to start from top left */
@@ -94,14 +98,35 @@ body {
     top: 0;
 
     width: 120vw; 
-    height: 100vh;
+    height: 85vh;
     overflow: hidden;
     object-fit: cover;
+
+
+    display: flex;                  /* Enables flexbox for centering */
+    justify-content: center;        /* Horizontally center content */
+    align-items: center;
+
+  }
+
+  .welcome-text h1 {
+    color: white;                      /* Text color */
+    font-size: 4em;                    /* Adjust font size */
+    text-align: center;                /* Center text */
+    margin: 0;                         /* Remove default margin */
+    
+    background-color: rgba(119, 13, 5, .7);
+    padding: 20px 40px;                  
+    display: inline-block;             
+    z-index: 0;
+
+    position: absolute;
+    text-align: center;
   }
 
   .intro {
     position: relative;
-    margin-top: 100vh; /* Pushes the content below the background image */
+    margin-top: 80vh; /* Pushes the content below the background image */
     margin-bottom: 20vh;
   }
 
@@ -131,3 +156,10 @@ body {
 
 </style>
 
+<!--   .banner-image h1 {
+    font-size: 4em;                 /* Adjust font size */
+    text-align: center;             /* Horizontally center text */
+    /* color: rgb(119, 13, 5); */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  } -->

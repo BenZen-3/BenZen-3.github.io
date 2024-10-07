@@ -1,36 +1,62 @@
 ---
 layout: post
-title:  "Rover Arm"
+title:  "Cornell Mars Rover Arm"
 date:   2024-06-01 02:51:09 -0400
 categories: project
 icon: \assets\images\Rover_Arm_icon.png
 summary: The Rover Arm was made for the Cornell Mars Rover team to compete in the University Rover Competition's equipment servicing and extreme delivery missions. The arm was designed to complete high load tasks as well as precision tasks. It makes use of brushless motors, strain wave gearboxes and an assortment of structural elements. 
 ---
 
-The rover arm was made for the Cornell Mars Rover (CMR) Team between August 2023 and June 2024. During that time, I served as the Arm Subteam lead and directed the construction of the arm and the memebers of the Arm subteam. This project is a collaboration with the members of the Arm Subteam, and the other members of CMR. 
+[video of the arm doing awesome stuff]
 
-<img src="\assets\images\Rover_Arm.jpg" style="width:758px;height:568px;">
+The rover arm was made for the Cornell Mars Rover (CMR) Team between August 2023 and June 2024. During that time, I served as the Arm Subteam lead and directed the construction of the arm and the members of the Arm subteam. This project is a collaboration with the members of the Arm Subteam, and the other members of CMR. My design contributions were to the lower arm, one of the end effectors (the rack and pinion one), and the miniature arm control/teleoperation. I did not directly work on the wrist design or the four bar end effector. 
 
-My design contributions were to the lower arm, one of the end effectors, and the miniature arm control/teleoperation. I did not directly work on the wrist design or the original end effector.
+To understand the design of the arm, a few of the competition requirements have to be understood first. The first requirement is that the arm has to lift a 5kg weight cache and be able to place it in a drawer. The arm also has to be able to complete dexterous manipulation tasks where it presses keys on a keyboard, flips switches, and pushes buttons. There were also a lot of internal requirements that drove a few specific design decisions that I won't bother to explore. 
+
+<img src="\assets\images\Rover_Arm.png" style="width:758px;height:568px;">
+
+A picture of the rover in Utah at the Unversity Rover Competition.
+
+<h1>Electro-Mechanical Motion</h1>
+
+Three things built this arm: strain wave gearboxes, brushless DC motors, and field orriented motor controllers (FOC). 
+
+Motors are a great choice for driving an arm like this. They come in two basic varieties: brushed or brushless. Brushed motors are cheaper, but don't have great stall characteristics and usually operate better at high speeds. Control of brushed motors is difficult because the basic control scheme is PWM control. PWM of a brushed motor doesn't give great torque control, and an external encoder is required for good positional control. Brushless motors have much better low speed characteristics and can be used with a FOC for torque control and tight positional control. Combining brushless motors with FOCs gives great control and decent torque. Stepper motors were ruled out because of their higher power draw and electrical noise compared to just using a normal brushless motor.
+
+Gearboxes are a necessity for arms like this. In order to lift the 5kg payload and the weight of the arm, there has to be a gearing between the motor and the arm. Without getting into the weeds too much, torque is directly proportional to the phase current of the motor. However, heat generation is quadratically related to the phase current. This meanst that for a doubling of torque, heat production will quadruple. Heat fries electronics on FOCs and burns through the enamel coating on motor wires to fry the motors. Heat is bad. Lower torque usage of a motor is almost always going to be better for the motor and controller. A gearbox is used to achieve this by trading output speed for additional torque. 
+
+In terms of gearboxes, there were multiple optins discussed and weighed. Among the possible choices were: planetary, gear drives, belt drives, chain drive, cycloidal drives, strain wave gearing. I needed a high gear ratio so that the input torque was as low as possible. For nerds, I found a gear ratio such that motor's peak power output was utilized when the arm was at max load. This works since the arm does not need to hold 5kg in its entire workspace and should only need to do that close to the rover itself. The choice of gearbox for the lower arm was a 1:100 strainwave gearbox. Honestly, there were a lot of tradeoffs, but this was the best option to satisfy all of the requirements.
+
+In summary, the motion components of the arm allow for excellent and accurate control of the arm. The design was low cost and designed for manufacturing. 
+
+<h1>Structure</h1>
+
+<img src="\assets\images\Rover_Arm_CAD.png" style="width:662px;height:813px;">
+
+This is an old CAD screenshot of the lower arm that I worked on.
+
+The structure is composed of carbon fiber beams with CNC aluminum members between the CF tubes. The CF tubes were choosen for their excellent strength, rigidity, and weight. The alternatives to CF tubes were aluminum tubes, or possibly some other composite tubing. Tubing makes the most sense because of basic physics for a member in bending and what shapes are availible for purchase. Since CF tubing is a composite, analysis was difficult and time-consuming. The solution was to buy such a thick tube that it was definitely going to survive the loading. The selected tube was a relatively cheap 1/8" thickness CF tube that could probably hold up a small house. 
+
+The aluminum brackets in between the CF members and gearboxes were optimized for manufacturing. During our design phase, the machine shop was questionably availible because of a retirement in the faculty. This forced us to use a lot of manufacturing-optimized parts across the rover. As a result, most of these CNC brackets were made to be one or two CNC Ops max. Shoutout to David S for helping me with the Ansys on these brackets. 
+
+The design also makes liberal use of laser cut plates at the gearboxes. These plates allow for connection to the between the motors and gearboxes. They additionally mount the motor controllers to each actuator and allow for direct motor control. Laser cut bent sheet metal was used at the wrist (thanks Loren W for an awesome wrist design) and end effector more than the lower arm structure. This technique was actually great. It's super cheap and can build incredibly strong and reliable systems without much effort or equipment. The structure of the Rover was designed to handle the heavy 5kg loads while remaining reliable and rigid.
+
+<h1>End Effector</h1>
+
+<img src="\assets\images\End_Effector.png" style="width:620px;height:720px;">
+
+The end effector that I designed and built.
+
+There were three end effector designs over the course of the design cycle that I was lead for. Each end effector was designed for a different purpose in the competition and could be swapped out. I'll only talk about the end effector that I designed here. My end effector was a rack and pinion design with a single centered servo with a single linear rail to constrain the motion of the gripper sides. This design gave excellent gripping power at around 20lbf. The gripper tips were specially designed to be able to type on a keyboard and the detant in the tips was designed so that the gripper could grab a handle securely. 
 
 
-To get a better understanding of the 
+<video autoplay muted loop width="1000" height="600">
+  <source src="\assets\images\Rover_Arm_Keyboard.mov" type="video/mp4" >
+  Your browser does not support the video tag.
+</video>
+The rover arm typing on a keyboard. I'm controlling the arm with the mini-arm from far away. This end effector was designed specifically to be able to press buttons with the thin points on the front.
 
-
-[Image of arm CAD]
-
-
-Discuss the strain wave gearboxes and motor control
-
-
-Discuss structure and analysis
-
-
-Discuss End Effector
-
-
-
-Discuss mini arm and control
+<h1>Control</h1>
 
 Control of the arm can be thought of in three separate sections:
 - control of the arm from a low-level accuracy perspective (how do I get the arm to do what I told it to do)
@@ -40,9 +66,9 @@ Control of the arm can be thought of in three separate sections:
 
 The following control scheme was devised, and tested in simulation.
 
-[Picture of the control scheme]
+<img src="\assets\images\Control_Scheme.png" style="width:1357px;height:297px;">
 
-Note: I know now that there are better ways to do this!
+Note: I know now that there are better ways to do this! I'm including this to show what I was thinking at the time.
 
 This controller shows a robotic arm control scheme that basically linearizes the arm into joint space. It linearizes the graivity term by adding feedforward torques equivalent to the weight forces on the arm. It also attempts to linearize the inertial forces as well. This control scheme theoretically allows for the arm to be controlled very precisely by the PID control block. 
 
@@ -56,24 +82,33 @@ Additionally, we simply ran out of time to implement the theorized controller. T
 
 If I learned something from this, it would be to use the simplest form of control scheme possible at first, and then increase complexity to add functionality. Also, computed torque control exists and does not require re-inventing!
 
+<h2>Control - Inverse Kinematics</h2>
 
-Inverse Kinematics 
+The higher-level control of the rover arm was done via <s>magic</s> inverse kinematics. Honestly it was basically magic though because some ROS package did everything once we set it up. Yes we know how IK works, no we did not want to find all those homogeneous transforms ourselves. The arm was controllable with IK through a Playstation controller and was useful in fine motion tasks like typing on a keyboard or moving directly up and down for certain motions. 
 
-The higher-level control of the rover arm was done via <s>magic</s> inverse kinematics. Honestly it was basically magic though because some ROS package did everything once we set it up. Yes we did get the gist of how IK works, no we did not want to find all those homogeneous transforms ourselves.
-
-The arm was controllable with IK through a Playstation controller and was useful in fine motion tasks like typing on a keyboard or moving directly up and down for certain motions. 
-
-
-Mini arm
+<h2>Control - Mini arm</h2>
 
 Mini arm was definitely one of my favorite parts of the arm. It was basically just a scale model of the arm that you could move to move the corresponding joints on the real arm. Although this is definitely not a new concept by any means, it was new to CMR and was definitely new to me. Implementation was pretty easy, and it made using the arm a lot of fun and way easier. Shoutout to David B for making the mini arm for me when I got completely swamped with everything else. Also for testing everything with me and for being a cool dude. The original idea for implementation also included torque feedback, but the latency between the real arm and mini-arm via radio was too great to accomplish this without risking instability. I believe it's posisble to do this with a slow enough arm and low enough latency, but wasn't doable this year.
 
 [video of it moving the rover arm]
 
 
+<h1>Results/Lessons</h1>
 
-Results/Lessons
+Honestly, the biggest lessons from leading the Arm Subteam were in the leadship and how to work with others on a large project spanning multiple discplines. But those are boring and don't fit well on a portfolio-website. So technically speaking, I think this project taught me a lot about gearboxes, motor control, structures, and control. Oh, and it solidified my hatred for wiring. That too. 
 
-Honestly, the biggest lessons from leading the Arm Subteam were in the leadship and how to work with others on a large project spanning multiple discplines. But those are boring and don't fit well on a personal-portfolio-website. So technically speaking, I think this project taught me a lot about gearboxes, motor control, structures, and control. Oh, and it solidified my hatred for wiring. That too. 
+10/10 would build again. Thanks to everyone on Rover for a great time! :D
 
-10/10 would build again.
+
+<style>
+
+h1 {
+    font-size: 2em; /* You can adjust the size to your preference */
+}
+
+h2 {
+    font-size: 1.5em; /* You can adjust the size to your preference */
+}
+
+
+</style>

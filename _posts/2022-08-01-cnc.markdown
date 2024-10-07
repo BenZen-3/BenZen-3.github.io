@@ -3,85 +3,96 @@ layout: post
 title:  "DIY CNC Mill"
 date:   2022-08-01 02:51:09 -0400
 categories: project
-icon: \assets\images\CNC_square_icon.jpg
-summary: Previous work on a custom designed and built 3-axis CNC machine. The machine is designed to mill most soft non-ferrous and some ferrous metals or other hard materials. The CNC makes use of a custom steel frame with ballscrews, linear profile rails, and a 20k RPM COTS spindle. The mill has mostly been used for milling aluminum with some bronze and occassional steel.
+icon: \assets\images\CNC_square_icon.png
+summary: Personal Project for a custom designed and built 3-axis CNC machine. The machine is designed to mill most soft non-ferrous and some ferrous metals or other hard materials. The CNC makes use of a custom steel frame with ballscrews, linear profile rails, and a 20k RPM COTS spindle. The mill has mostly been used for milling aluminum with some bronze and occassional steel.
 ---
-DIY CNC Mill
+
+<video autoplay muted loop width="1000" height="600">
+  <source src="\assets\images\Milling.MOV" type="video/mp4" >
+  Your browser does not support the video tag.
+</video>
+Just a quick clip of milling down some round stock. This particular part was for the robot quadruped.
 
 <img src="\assets\images\CNC.jpg" alt="CNC picture" style="width:500px;height:600px;">
 
-Overview
-
 Over the span of about 3 months in the summer of 2022, I decided to make my own desktop CNC mill. The goal was to make a mill capable of milling any plastic, aluminum, or wood thrown at it, along with the capacity to tackle ferrous metals or harder non-ferrous metals if needed. It also needed to cheap and be portable enough to and from college. The mill takes inspiration from multiple sources, but the design is entirely my own.
 
-[VIDEO OF IT MILLING SHIT REALLY FAST]
+<h1>Design - Spindle</h1>
 
-Design - Spindle
 This machine was designed from the spindle backwards. I started with the necessary cutting parameters that I wanted and then moved backwards from there. In my opinion, the most critical features of the spindle for a hobby machine are the power consumption, the torque/speed and the tooling size.
 One of the big constraints with choosing a spindle is the total power draw of the spindle. A standard US outlet has a 15A breaker. It is generally suggested to use under 80% of the limit continuously, which leaves my freedom-loving spindle only able to draw ~12A at 120V from a standard outlet. This puts my ideal spindle range at around 1-1.5Kw.
+
 Moving on to the torque/speed of a hobby spindle, the most obvious tradeoff is that a hobby spindle has very low torque compared to a professional machine. This is especially true at low speeds, where the torque/speed curve takes a dramatic nose-dive into near uselessness. Unfortunately, when I was looking for spindles, there was not a significant amount of variation in the torque/speed curve of hobby spindles under 1.5kW. All options would limit me to higher speed machining past 10k rpm. Luckily, this would be fine for aluminum and non-ferrous work. Steel is certainly an issue for this spindle because it generates needles more than it produces chips. 
-For tooling purposes, the limited torque of the hobby spindles severely limited the tooling size. Bigger tools are better because the endmills are more rigid and additional tool types are available (indexable endmills). However, the limitations of the spindle torque heavily suggested using smaller tooling in the 6mm range. 
-The spindle that I decided to use the ____. It goes up to 20k rpm spindle with water cooling and ER-11 tooling. It hit all the specifications that I needed, and it did it on a budget:
 
-[Picture of Spindle]
+For tooling purposes, the limited torque of the hobby spindles severely limited the tooling size. Bigger tools are better because the endmills are more rigid and additional tool types are available (indexable endmills). However, the limitations of the spindle torque heavily suggested using smaller tooling in the 6mm range. It goes up to 20k rpm spindle with water cooling and ER-11 tooling. It hit all the specifications that I needed, and it did it on a budget. The bearings are definitely knockoffs, but the spindle works well. In the future, this part will probably be replaced since it is one of the areas with the most room for improvement. However, that upgrade to a low-end professional spindle would be extremely expensive.
 
-In the future, this part will probably be replaced since it is one of the areas with the most room for improvement. However, that upgrade to a low-end professional spindle would be extremely expensive.
+<h1>Design – Motion Components</h1>
 
-Design – Motion Components
+<img src="\assets\images\CNC_frame_low.png" alt="CNC picture" style="width:600px;height:800px;">
+
 The motion components of the CNC are twofold: linear rails and ballscrews. Linear rails rigidly constrain the motion of an axis to a single direction. Ballscrews are like lead screws except they circulate ball bearings to reduce sliding friction (yay rolling friction), reduce backlash, and decrease wear. 
-[picture of linear rail] [picture of ballscrew]
 
-
-Starting with the linear rail choice, the ideal linear rail is extremely rigid and extremely straight. There are several different types of linear slides/rails available. The two that I’ve seen most commonly in CNCs (both DIY and professional) are the following:
-1) True linear rails aka profile rails aka linear guideway
-2) Round rails
-True linear rails function by circulating balls along a ground raceway similar to a radial ball bearing, except the balls recirculate along a linear path instead of circularly around the bearing races. Linear rails allow the rail to be bolted down at multiple points along the direction of motion.
-Round rails function similarly to linear rails, except the carriages run along a round shaft. These rails are either only secured at the ends, or have a flange that allows for a semi-rigid connection along the length of the rail. 
-True linear rails are far superior in rigidity to round rails. Although round rails can be found in some machines due to their low cost, true linear rails are much better. Any company pawning off round noodle rails are stealing money (See the Bantam CNC for reference).
+Starting with the linear rail choice, the ideal linear rail is extremely rigid and extremely straight. There are several different types of linear slides/rails available. The two that I’ve seen most commonly in CNCs (both DIY and professional) are true linear rails aka profile rails aka linear guideway or round rails.True linear rails function by circulating balls along a ground raceway similar to a radial ball bearing, except the balls recirculate along a linear path instead of circularly around the bearing races. Linear rails allow the rail to be bolted down at multiple points along the direction of motion.
+Round rails function similarly to linear rails, except the carriages run along a round shaft. These rails are either only secured at the ends, or have a flange that allows for a semi-rigid connection along the length of the rail. True linear rails are far superior in rigidity to round rails. Although round rails can be found in some machines due to their low cost, true linear rails are much better. Any company pawning off round noodle rails are stealing money (See the Bantam CNC for reference).
 
 Now looking only at the true linear rails, there are still many different sizes of linear rail, from tiny mgn12 rails on 3D printers to massive rails that look more like train tracks than linear rails. Without diving into too much detail on the tradeoff between the cost, rigidity, and size of the rails, HGW15 rails are a decent balance across these metrics. The highest quality options for linear rails, such as HIWIN rails, are prohibitively expensive. Alternative sources of knockoff rails are Alibaba, Aliexpress, or Amazon. Obviously, these rails exhibit less-than-stellar quality but are more than sufficient for my limited applications and experience. Shoutout to the PrintNC community for finding semi-reputable suppliers for motion components. I ordered from the same suppliers that they recommended.
 
 The ballscrews are SFU1605. Ballscrews for linear motion are one of the best ways to build a rigid and accurate CNC machine. They are superior to lead screws and belts and rack/pinion designs in wear, backlash, and friction. The only major disadvantage of ball screws is the higher cost. The higher cost was mitigated by using knockoff rolled ballscrews. Ballscrews can be made with one of two main manufacturing techniques. They are either precision ground, and exceedingly expensive (thousands of dollars per screw), or they can be rolled. Rolled screws are less accurate than ground screws but are more durable and far cheaper owing to the easier manufacturing. I used rolled screws from a supplier on Alibaba, which was suggested by the PrintNC community.
-The name SFU1605 ballscrew means that they are 16mm in diameter and have a 5mm pitch. I chose a high diameter ballscrew to increase the rigidity of the screw and reduce the possibility of runout at very high screw rpm (aka screw whipping). In retrospect, a 12mm diameter screw would have most likely sufficed, but the only engineering downside to the 16mm diameter is a small increase in the inertia of the system. The 5mm pitch was chosen because it was the smallest pitch readily available, which gives a high precision. 
+The name SFU1605 ballscrew means that they are 16mm in diameter and have a 5mm pitch. I chose a high diameter ballscrew to increase the rigidity of the screw and reduce the possibility of runout at very high screw rpm (aka screw whipping). In retrospect, a 12mm diameter screw would have most likely sufficed, but the only engineering downside to the 16mm diameter is a small increase in the inertia of the system. The 5mm pitch was chosen because it was the smallest pitch readily available, which gives a high precision. These two types of motion components work together to make a rigid and accurate machine.
 
-These two types of motion components work together to make a rigid and accurate machine.
+<h1>Design – Frame</h1>
 
-Design – Frame
-Two things. Rigidity and damping. 
+<img src="\assets\images\CNC_frame.png" alt="CNC picture" style="width:620px;height:720px;">
+
+Note: The CAD for this project was on a laptop that got completely bricked, this is a screenshot I had lying around because the most recent backup was older than this screenshot. 
+
+Two things. Rigidity and damping. Most industrial CNC machines make use of cast iron for its excellent properties in both of these categories. I do not own a casting yard or have the money to order a cast base for my little CNC machine. Other options for industrial machines are granite or epoxy granite. Both of these options can have very high damping while remaining rigid. One of the issues with these techniques is that they produce extremely massive machines. Since a key requirement for me was the ability to move this machine back and forth between home and Cornell, I had to use another solution. My solution was to focus on rigidity, and use steel tubing and plating. Although this solution doesn't have great damping, the rigidity is more important than the damping for a machine of this size. This particular tradeoff is rather common for DIY CNC machines.
+
+Once I had chosen the construction material, the frame was designed to use three main elements: steel tubes, steel plates, steel bars. The steel tubes act as the major structural elements of the machine, the plates connect the tubes where needed, and the steel bars act as a flat surface for the linear rails to mount to. The steel bars were a superior mounting surface than the tubing because the tubing is not very flat due to the weld seam. As a whole, the frame was designed for rigidity and manufacturability. I did some FEA on the frame (images and results lost to the bricked computer)
+
+<h1>Design – Controls</h1>
+
+The main electrical control was done using an <a class="custom-link" href="https://www.cncdrive.com/AXBB.html">AXBB-E CNC motion controller</a>. This motion controller allows for synchronous stepper movements from g-code. I thought about using an old computer or a retrofitted raspberry pi with linuxcnc for this purpose, but this controller seems to be a great option. 
+
+I used stepper motors for driving the axis because they provide precise motion control with good torque output at a low price. These particular steppers are open-loop steppers. I did not see the need to pay for closed-loop steppers because I did not intend to crash the machine and lose steps a lot (I would do that a couple times). There are also inductive limit switches that detect the limits of each machine axis. These prevent any axis from crashing or running off the rails. All of the critical controls wiring are placed in a custom electronics box that I made out of some aluminum from high school robotics. 
+
+<img src="\assets\images\Controls_Box.png" alt="CNC picture" style="width:720px;height:620px;">
+
+<img src="\assets\images\CNC_Wiring.png" alt="CNC picture" style="width:640px;height:480px;">
+
+<h1>Construction</h1>
+
+I won't spend too much time talking about how this was built, but it required: A drill press, a bandsaw, a jigsaw, a car, a lot of other random tools, and a lot of time and even more effort. I drilled many hundreds of holes in steel tubes and plates.
+
+Tramming was a major pain for this machine. Honestly this was one of the least-thought out portions of the machine. Ideally, I would have included built-in screw-jack adjustments that would be able to tram the machine. This process took a few days and a lot of moving the axes with a dial indicator.
+
+I did not and do not have the metrology equipment to quantify the straightness or flatness of the cheap linear rails, but I can roughly determine the straightness of each axis with respect to the frame using a dial indicator and running the axes back and forth. The Y-axis is within 5 thou across its full travel assuming that the milled plate I ordered was straight along that axis. The X-axis is within 8 thou across its travel. The Z-axis is within 6 thou. The mill was trammed with the straightest portions of travel at the center of the table and the most mis-aligned sections at the edges of the travel. The biggest issue for me is determining the squareness of the machine. There are significant improvements that could be made in this area. Verifying the accuracy and squareness of this machine is difficult without more metrology equipment.
+
+<h1>Results/Lessons</h1>
+
+<img src="\assets\images\PrettyCNC.png" alt="CNC picture" style="width:600px;height:800px;">
+
+This machine can absolutely rip through material. I have seen people run Haas machines much slower than I can push this. I learned a lot about machine design and machining. The machine is fun to use, but definitely takes some getting used to. One of the big problems about running this machine is how loud it is. Since the damping is relatively low, the whole frame rings while milling. The incredibly high spindle speed also plays a role. The high pitch noise is extremely annoying compared to the lower frequency noises that larger mills will sometime make. The final annoyance is how small the tooling is. Small endmills break easily. Small endmills with lots of flutes have very small cores and break even easier. This means that I tend to use endmills with 1 or 2 flutes. These endmills, esspecially the single flute endmills, are more unbalanced and make more noise. 
+
+Disregarding the noise issues, the parts this machine produces are actually fairly dimensionally accurate. The machine use is fairly easy. My process is to design a part in Autodesk Inventor, then I program the CAM in Fusion360. I use the UCCNC control software to drive the machine. I am very happy with this machine and it has seen a lot of use in a few of my other projects. Notably, this CNC was used extensively for the robot quadruped project. 
+
+Finally, I learned that NOTHING IS STRAIGHT, NOTHING IS FLAT, NOTHING IS SQUARE!
 
 
-Design – Controls 
-
-
-Precision
-The theoretical precision of the machine is the pitch of ballscrew times the precision of motor.
-
-Construction
-Making the damn thing
-Drill press
-Bandsaw
-Jigsaw
-Car?
-
-Tramming
-
-
-
-Results/Lessons
-
-
-I did not and do not have the metrology equipment to quantify the straightness or flatness of the cheap linear rails, but I can roughly determine the straightness of each axis with respect to the frame using a dial indicator and running the axes back and forth.
-The Y-axis is within 5 thou across its full travel assuming that the milled plate I ordered was straight along that axis. The X-axis is within 8 thou across its travel. The Z-axis is within 6 thou. The mill was trammed with the straightest portions of travel at the center of the table and the most mis-aligned sections at the edges of the travel.
-
-The biggest issue for me is determining the squareness of the machine. Squareness is
-
-
-
-NOTHING IS STRAIGHT, NOTHING IS FLAT, NOTHING IS SQUARE
-
-
-
-[Video of it milling!]
-
+<video autoplay muted loop width="1000" height="600">
+  <source src="\assets\images\Milling_Timelapse.MOV" type="video/mp4" >
+  Your browser does not support the video tag.
+</video>
+A timelapse video of milling actuator housings for the robot quapruped project.
 
 9/10 would build again. Would buy the plates laser cut.
+
+
+
+<style>
+
+h1 {
+    font-size: 2em; /* You can adjust the size to your preference */
+}
+
+</style>

@@ -8,7 +8,7 @@ summary: Personal Project for a custom designed and built 3-axis CNC machine. Th
 ---
 
 <video autoplay muted loop width="1000" height="600">
-  <source src="\assets\images\Milling.MOV" type="video/mp4" >
+  <source src="\assets\videos\Milling.mp4" type="video/mp4" >
   Your browser does not support the video tag.
 </video>
 Just a quick clip of milling down some round stock. This particular part was for the robot quadruped.
@@ -28,7 +28,7 @@ For tooling purposes, the limited torque of the hobby spindles severely limited 
 
 <h1>Design – Motion Components</h1>
 
-<img src="\assets\images\CNC_frame_low.png" alt="CNC picture" style="width:600px;height:800px;">
+<img src="\assets\images\CNCFrameLow.png" alt="CNC picture" style="width:600px;height:800px;">
 
 The motion components of the CNC are twofold: linear rails and ballscrews. Linear rails rigidly constrain the motion of an axis to a single direction. Ballscrews are like lead screws except they circulate ball bearings to reduce sliding friction (yay rolling friction), reduce backlash, and decrease wear. 
 
@@ -70,7 +70,7 @@ I did not and do not have the metrology equipment to quantify the straightness o
 
 <h1>Results/Lessons</h1>
 
-<img src="\assets\images\PrettyCNC.png" alt="CNC picture" style="width:600px;height:800px;">
+<img src="\assets\images\PrettyCNC.webp" alt="CNC picture" style="width:600px;height:800px;">
 
 This machine can absolutely rip through material. I have seen people run Haas machines much slower than I can push this. I learned a lot about machine design and machining. The machine is fun to use, but definitely takes some getting used to. One of the big problems about running this machine is how loud it is. Since the damping is relatively low, the whole frame rings while milling. The incredibly high spindle speed also plays a role. The high pitch noise is extremely annoying compared to the lower frequency noises that larger mills will sometime make. The final annoyance is how small the tooling is. Small endmills break easily. Small endmills with lots of flutes have very small cores and break even easier. This means that I tend to use endmills with 1 or 2 flutes. These endmills, esspecially the single flute endmills, are more unbalanced and make more noise. 
 
@@ -80,7 +80,7 @@ Finally, I learned that NOTHING IS STRAIGHT, NOTHING IS FLAT, NOTHING IS SQUARE!
 
 
 <video autoplay muted loop width="1000" height="600">
-  <source src="\assets\images\Milling_Timelapse.MOV" type="video/mp4" >
+  <source src="\assets\videos\MillingTimelapse.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 A timelapse video of milling actuator housings for the robot quapruped project.

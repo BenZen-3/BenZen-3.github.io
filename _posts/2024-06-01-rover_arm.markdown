@@ -7,13 +7,16 @@ icon: \assets\images\Rover_Arm_icon.png
 summary: The Rover Arm was made for the Cornell Mars Rover team to compete in the University Rover Competition's equipment servicing and extreme delivery missions. The arm was designed to complete high load tasks as well as precision tasks. It makes use of brushless motors, strain wave gearboxes and an assortment of structural elements. 
 ---
 
-[video of the arm doing awesome stuff]
+<video autoplay muted loop width="1000" height="600">
+  <source src="\assets\videos\RoverArmCool.mp4" type="video/mp4" >
+  Your browser does not support the video tag.
+</video>
 
 The rover arm was made for the Cornell Mars Rover (CMR) Team between August 2023 and June 2024. During that time, I served as the Arm Subteam lead and directed the construction of the arm and the members of the Arm subteam. This project is a collaboration with the members of the Arm Subteam, and the other members of CMR. My design contributions were to the lower arm, one of the end effectors (the rack and pinion one), and the miniature arm control/teleoperation. I did not directly work on the wrist design or the four bar end effector. 
 
 To understand the design of the arm, a few of the competition requirements have to be understood first. The first requirement is that the arm has to lift a 5kg weight cache and be able to place it in a drawer. The arm also has to be able to complete dexterous manipulation tasks where it presses keys on a keyboard, flips switches, and pushes buttons. There were also a lot of internal requirements that drove a few specific design decisions that I won't bother to explore. 
 
-<img src="\assets\images\Rover_Arm.png" style="width:758px;height:568px;">
+<img src="\assets\images\RoverArm.webp" style="width:758px;height:568px;">
 
 A picture of the rover in Utah at the Unversity Rover Competition.
 
@@ -43,7 +46,7 @@ The design also makes liberal use of laser cut plates at the gearboxes. These pl
 
 <h1>End Effector</h1>
 
-<img src="\assets\images\End_Effector.png" style="width:620px;height:720px;">
+<img src="\assets\images\EndEffector.png" style="width:600px;height:600px;">
 
 The end effector that I designed and built.
 
@@ -51,7 +54,7 @@ There were three end effector designs over the course of the design cycle that I
 
 
 <video autoplay muted loop width="1000" height="600">
-  <source src="\assets\images\Rover_Arm_Keyboard.mov" type="video/mp4" >
+  <source src="\assets\videos\RoverArmKeyboard.mp4" type="video/mp4" >
   Your browser does not support the video tag.
 </video>
 The rover arm typing on a keyboard. I'm controlling the arm with the mini-arm from far away. This end effector was designed specifically to be able to press buttons with the thin points on the front.
@@ -90,8 +93,11 @@ The higher-level control of the rover arm was done via <s>magic</s> inverse kine
 
 Mini arm was definitely one of my favorite parts of the arm. It was basically just a scale model of the arm that you could move to move the corresponding joints on the real arm. Although this is definitely not a new concept by any means, it was new to CMR and was definitely new to me. Implementation was pretty easy, and it made using the arm a lot of fun and way easier. Shoutout to David B for making the mini arm for me when I got completely swamped with everything else. Also for testing everything with me and for being a cool dude. The original idea for implementation also included torque feedback, but the latency between the real arm and mini-arm via radio was too great to accomplish this without risking instability. I believe it's posisble to do this with a slow enough arm and low enough latency, but wasn't doable this year.
 
-[video of it moving the rover arm]
 
+<video autoplay muted loop width="1000" height="600">
+  <source src="\assets\videos\RoverArmTeleoperation.mp4" type="video/mp4" >
+  Your browser does not support the video tag.
+</video>
 
 <h1>Results/Lessons</h1>
 

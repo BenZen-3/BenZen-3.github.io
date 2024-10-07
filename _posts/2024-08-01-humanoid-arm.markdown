@@ -8,7 +8,7 @@ summary: Ongoing personal project to build an anthropromorphic humanoid robotic 
 ---
 
 <video autoplay muted loop width="1000" height="600">
-  <source src="\assets\images\PewPewArm.MOV" type="video/mp4" >
+  <source src="\assets\videos\PewPewArm.mp4" type="video/mp4" >
   Your browser does not support the video tag.
 </video>
 
@@ -46,7 +46,7 @@ Just a few CAD sneak peaks. These slices show just how dense this design became.
 <h1> Results to Date </h1>
 
 <video autoplay muted loop width="1000" height="600">
-  <source src="\assets\images\Anthro_Arm_Move.MOV" type="video/mp4" >
+  <source src="\assets\videos\AnthropomorphicArm.mp4" type="video/mp4" >
   Your browser does not support the video tag.
 </video>
 The arm is absolutely ready to throw hands. This is approximately 17% of maximum speed. Although to be fair I believe that max speed would break the PLA parts until I can upgrade them to CF-nylon.

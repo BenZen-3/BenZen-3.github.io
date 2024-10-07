@@ -95,7 +95,7 @@ Mini arm was definitely one of my favorite parts of the arm. It was basically ju
 
 
 <video autoplay muted loop width="1000" height="600">
-  <source src="\assets\videos\RoverArmTeleoperation.mp4" type="video/mp4" >
+  <source src="\assets\videos\RoverArmTeleoperation.MP4" type="video/mp4" >
   Your browser does not support the video tag.
 </video>
 

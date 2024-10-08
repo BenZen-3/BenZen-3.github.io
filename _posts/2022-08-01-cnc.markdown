@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "DIY CNC Mill"
+title:  "3-Axis CNC Mill"
 date:   2022-08-01 02:51:09 -0400
 categories: project
 icon: \assets\images\CNC_square_icon.png

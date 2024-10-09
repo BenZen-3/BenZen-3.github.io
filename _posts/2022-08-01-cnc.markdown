@@ -4,7 +4,7 @@ title:  "3-Axis CNC Mill"
 date:   2022-08-01 02:51:09 -0400
 categories: project
 icon: \assets\images\CNC_square_icon.png
-summary: Personal project: a custom-designed and built 3-axis CNC machine. The machine is capable of milling most soft, non-ferrous metals, as well as some ferrous metals and other hard materials. It features a custom steel frame, ball screws, linear profile rails, and a 20,000 RPM COTS spindle. The mill has primarily been used for milling aluminum, with some bronze and occasional steel.
+summary: Personal project for a custom-designed and built 3-axis CNC machine. The machine is capable of milling most soft, non-ferrous metals, as well as some ferrous metals and other hard materials. It features a custom steel frame, ball screws, linear profile rails, and a 20,000 RPM COTS spindle. The mill has primarily been used for milling aluminum, with some bronze and occasional steel.
 ---
 
 <video autoplay muted loop width="1000" height="600">

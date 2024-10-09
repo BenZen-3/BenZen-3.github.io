@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Humanoid Robotic Arm"
+title:  "Anthropomorphic Robotic Arm"
 date:   2024-08-01 02:51:09 -0400
 categories: project
 icon: \assets\images\Humanoid_Arm_icon.png
-summary: Ongoing personal project to build an anthropromorphic humanoid robotic arm. This arm has been designed for upcoming work on embodied machine learning and imitation learning. Design makes significant use of brushless motors with capstan drives to acheive a high torque density with good controlability and low cost.
+summary: Ongoing personal project to build an anthropromorphic robotic arm. This arm has been designed for upcoming work on embodied machine learning and imitation learning. Design makes significant use of brushless motors with capstan drives to acheive a high torque density with good controlability and low cost.
 ---
 
 <video autoplay muted loop width="1000" height="600">
@@ -16,11 +16,14 @@ summary: Ongoing personal project to build an anthropromorphic humanoid robotic 
 
 <h1> Overview </h1>
 
-This project is still in progress, so I will update this as it progresses. It was started in June 2024 and the current progress is about 6 weeks of work which slowed down when the semester started and my availibility became more limited. The design takes inspiration from many places, but the design is completely my own.
 
-The overarching goal for this arm is to create a humanoid arm for embodied machine learning and imitation learning. This yeields the mechanical goal to create an arm that mimics humanoid size and capabilities while maintaining controlability. These requirements are difficult to manage while maintaining low cost, so the design requires a lot careful attention Just to list a few requirements: anthropromorphic morphology, high speed, high torque, backdrivability/torque transparency, precise position and velocity control, and decent torque control.
+Here’s the edited version:
 
-The current design of the arm encompasses everything up to the wrist joint. Since a human arm is 7 DoF and the wrist is 2 DoF, this design is for 5 DoF. The wrist joints and hand will be completed later once this portion of the project is complete. The hand in the pictures is a model I found online as a placeholder. The arm that I have pictures of only implements 4 joints. The shoulder is 3 rotational joints, but only 2 are active because the one joint contained by the body is not currently needed.
+This project is still in progress, and I will provide updates as it develops. It began in June 2024, and the current progress reflects about six weeks of work. However, progress has slowed since the semester started, limiting my availability. The design takes inspiration from various sources, but it is entirely my own creation.
+
+The overarching goal for this arm is to create a humanoid arm for embodied machine learning and imitation learning. This leads to the mechanical objective of developing an arm that mimics human size and capabilities while maintaining controllability. Balancing these requirements with low cost is challenging, necessitating careful attention to detail. Just to list a few of the requirements: anthropomorphic morphology, high speed, high torque, backdrivability/torque transparency, precise position and velocity control, and effective torque control.
+
+The current design of the arm encompasses everything up to the wrist joint. Since a human arm has 7 degrees of freedom (DoF) and the wrist adds 2 DoF, this design currently incorporates 5 DoF. The wrist joints and hand will be completed later once this portion of the project is finalized. The hand shown in the pictures is a model I found online as a placeholder. The arm depicted only implements 4 joints. The shoulder consists of 3 rotational joints, but only 2 are active because the joint contained within the body is not currently needed.
 
 <img src="\assets\images\Humanoid_Arm.jpg" style="width:500px;height:600px;">
 
@@ -41,8 +44,6 @@ For manufacturing, this design makes extensive use of 3D printing. Although I kn
 
 Just a few CAD sneak peaks. These slices show just how dense this design became. The triple problem of routing electrical power, mechanical power, and airflow became an extremely tight series of constraints to fight.
 
-
-
 <h1> Results to Date </h1>
 
 <video autoplay muted loop width="1000" height="600">
@@ -51,10 +52,9 @@ Just a few CAD sneak peaks. These slices show just how dense this design became.
 </video>
 The arm is absolutely ready to throw hands. This is approximately 17% of maximum speed. Although to be fair I believe that max speed would break the PLA parts until I can upgrade them to CF-nylon.
 
+So far, the arm has proven to be extremely backdrivable and controllable. As an aside, the 'bounciness' observed in these few videos is a positive sign, indicating that the actuators are highly backdrivable and exhibit low internal friction. The arm's full range of capabilities has yet to be tested, and the final design will take time, but this prototype has laid the groundwork. Future work will focus on enhancing the robustness of the existing design and integrating the mechanical system with anticipated machine learning efforts.
 
-The arm so far has proven to be extremely backdrivable and controllable. As an aside, the 'bounciness' seen in these few videos is a great sign because it shows that the actuators are very backdrivable and have low internal friction. The arm's full range of capabilities are yet to be tested, and the final design will take some time, but the groundwork has been laid by this prototype. Future work will focus on making the existing work more robust and integrating the mechanical system with expected machine learning efforts. 
-
-This arm is a combination of lessons from the past large projects that I have undertaken. It takes a lot of the electrical knowledge about motor control that I picked up while developing the robotic quad actuators and merges it with the lessons I got from the rover arm. The final element that I'm actively working on right now is the integration of machine learning. I am hoping to integrate a vision language model with this arm so that I can request it to grab specific objects. This project is in-progress and this will be updated occassionally as progess is made.
+This arm combines lessons learned from the large projects I have previously undertaken. It incorporates the electrical knowledge about motor control that I gained while developing the robotic quad actuators and merges it with insights from the rover arm project. The final element I am actively working on right now is the integration of machine learning. I hope to integrate a vision language model with this arm so that I can instruct it to grab specific objects. This project is ongoing, and I will update it occasionally as progress is made.
 
 
 10/10 would build again, or I guess keep building.

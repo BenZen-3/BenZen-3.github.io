@@ -17,8 +17,6 @@ summary: Ongoing personal project to build an anthropromorphic robotic arm. This
 <h1> Overview </h1>
 
 
-Here’s the edited version:
-
 This project is still in progress, and I will provide updates as it develops. It began in June 2024, and the current progress reflects about six weeks of work. However, progress has slowed since the semester started, limiting my availability. The design takes inspiration from various sources, but it is entirely my own creation.
 
 The overarching goal for this arm is to create a humanoid arm for embodied machine learning and imitation learning. This leads to the mechanical objective of developing an arm that mimics human size and capabilities while maintaining controllability. Balancing these requirements with low cost is challenging, necessitating careful attention to detail. Just to list a few of the requirements: anthropomorphic morphology, high speed, high torque, backdrivability/torque transparency, precise position and velocity control, and effective torque control.
